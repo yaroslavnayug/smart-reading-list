@@ -5,16 +5,15 @@ namespace App\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class MainController extends AbstractController
 {
     /**
-     * @param $word
-     * @return Response
+     * @return RedirectResponse
      */
     public function index()
     {
-        return $this->render('books.html.twig');
+        return $this->redirectToRoute('books');
     }
 }
