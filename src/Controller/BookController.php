@@ -12,10 +12,7 @@ class BookController extends AbstractController
 {
     public function add()
     {
-        $book = new Book();
-        $book->setAuthor('');
-        $book->setTitle('');
-//        (new BookRepository())->
+
     }
 
     /**
@@ -23,6 +20,13 @@ class BookController extends AbstractController
      */
     public function list()
     {
-        return $this->render('books.html.twig');
+        $repository = $this->getDoctrine()->getRepository(Book::class);
+        $books = $repository->findAll();
+        return $this->render(
+            'books.html.twig',
+            [
+                'books' => $books
+            ]
+        );
     }
 }
