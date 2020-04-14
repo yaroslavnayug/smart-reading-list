@@ -5,3 +5,7 @@ index:
 books:
   path: /books
   controller: App\Controller\BookController::list
+
+book_add:
+  path: /book_add
+  controller: App\Controller\BookController::add
